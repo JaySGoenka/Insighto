@@ -1,0 +1,694 @@
+{
+  "linkedinUrl": "https://www.linkedin.com/in/jay-goenka-b797851b2/",
+  "firstName": "Jay ",
+  "lastName": "Goenka",
+  "fullName": "Jay  Goenka",
+  "headline": "SWE Intern @ Esri | Computer Engineering @ UIUC | James Scholar",
+  "connections": 832,
+  "followers": 831,
+  "email": null,
+  "mobileNumber": null,
+  "jobTitle": "Software Engineering Intern",
+  "companyName": "Esri",
+  "companyIndustry": "Information Technology And Services",
+  "companyWebsite": "esri.com",
+  "companyLinkedin": "linkedin.com/company/esri",
+  "companyFoundedIn": 1969,
+  "companySize": "5001-10000",
+  "currentJobDuration": "4 mos",
+  "currentJobDurationInYrs": 0.33,
+  "topSkillsByEndorsements": null,
+  "addressCountryOnly": "United States",
+  "addressWithCountry": "Champaign, Illinois, United States",
+  "addressWithoutCountry": "Champaign, Illinois",
+  "profilePic": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1694057542164?e=1758153600&v=beta&t=6xTtgDaLY3_gHPUZ9OhKqhINdjtEyxaKREceskKsHOU",
+  "profilePicHighQuality": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694057542164?e=1758153600&v=beta&t=hxpHWNlHSGxIdN-s5fDd0Rzt5Sl63d5fVJ6NdbN1O40",
+  "about": "A senior at UIUC studying Computer Engineering with a Statistics minor. I'm passionate about using AI and Machine Learning to solve real-world problems and push the boundaries of what technology can do. I thrive on tackling challenges, learning continuously, and building impactful solutions. Each day is an opportunity to learn, spark new ideas, and be part of the technological progress defining our generation.\nCurrently open to internship and research opportunities. Let’s connect!",
+  "publicIdentifier": "jay-goenka-b797851b2",
+  "openConnection": null,
+  "urn": "ACoAADGXpE0B5Oj-L_EnW0KY8q6Gs0tJtQMv_QA",
+  "experiences": [
+    {
+      "companyId": "5311",
+      "companyUrn": "urn:li:fsd_company:5311",
+      "companyLink1": "https://www.linkedin.com/company/5311/",
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQE7SEkY882aSg/company-logo_200_200/company-logo_200_200/0/1656114632675/esri_logo?e=1758153600&v=beta&t=cH9pC261hKWezM0GWu3m3kTnaovrHKzf27Df3TTyDm8",
+      "title": "Software Engineering Intern",
+      "subtitle": "Esri · Internship",
+      "caption": "May 2025 - Present · 4 mos",
+      "metadata": "Redlands, California, United States · On-site",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": []
+        }
+      ]
+    },
+    {
+      "companyId": "2650",
+      "companyUrn": "urn:li:fsd_company:2650",
+      "companyLink1": "https://www.linkedin.com/company/2650/",
+      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGFFDl_Z9pIAA/company-logo_200_200/company-logo_200_200/0/1630611684443/university_of_illinois_at_urbana_champaign_logo?e=1758153600&v=beta&t=pKjcvpIqLt_u72DCZ0xODxSDYizicVxvOQcCBLC0A3Y",
+      "title": "University of Illinois Urbana-Champaign",
+      "subtitle": "2 yrs 6 mos",
+      "breakdown": true,
+      "subComponents": [
+        {
+          "title": "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory",
+          "caption": "Feb 2024 - Jun 2025 · 1 yr 5 mos",
+          "metadata": "Champaign, Illinois, United States",
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "- Analyzed performance of various LLMs in classifying accelerometer signals for motion tracking in Multiple Sclerosis patients, benchmarking against traditional machine learning models.\n- Used Python libraries such as Pandas and NumPy to clean, filter, and batch raw accelerometer data, transforming it into graph-based or structured numeric formats for LLM input.\n- Applied and compared prompt engineering techniques (few-shot, zero-shot, numeric, graphical, hybrid) to optimize classification accuracy without fine-tuning."
+            }
+          ]
+        },
+        {
+          "title": "Staff Consultant",
+          "subtitle": "Contract",
+          "caption": "Jan 2023 - Jun 2025 · 2 yrs 6 mos",
+          "metadata": "Remote",
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "- Conducted in-depth primary and secondary research to analyze market trends, emerging technologies, and competitive positioning across multiple industries for partner companies. \n- Delivered actionable, data-driven insights that informed product development and long-term growth strategies, supporting executive decision-making through structured analysis and cross-functional collaboration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "companyId": "5311",
+      "companyUrn": "urn:li:fsd_company:5311",
+      "companyLink1": "https://www.linkedin.com/company/5311/",
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQE7SEkY882aSg/company-logo_200_200/company-logo_200_200/0/1656114632675/esri_logo?e=1758153600&v=beta&t=cH9pC261hKWezM0GWu3m3kTnaovrHKzf27Df3TTyDm8",
+      "title": "Software Engineer",
+      "subtitle": "Esri · Internship",
+      "caption": "Jun 2024 - Aug 2024 · 3 mos",
+      "metadata": "Sharjah, Sharjah Emirate, United Arab Emirates · On-site",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "- Automated metadata extraction and document tagging workflows using spaCy and custom rules to process unstructured geospatial records. \n- Engineered a context-aware chunking strategy, storing the embeddings in a vector database for scalable semantic search. \n- Designed an efficient retrieval function to surface high-relevance content to the LLM, reducing context length by 15% and improving response precision.\n- Combined data preprocessing, semantic retrieval, and prompt engineering to build a complete LLM workflow, enabling a RAG-based chat interface that delivers accurate, context-aware responses to user queries."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "companyLink1": "https://www.linkedin.com/search/results/all/?keywords=Circuit+Computer",
+      "title": "Summer Intern",
+      "subtitle": "Circuit Computer · Internship",
+      "caption": "Jul 2021 - Aug 2021 · 2 mos",
+      "metadata": "Sharjah, Sharjah Emirate, United Arab Emirates · On-site",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "- Interned with a focus on database management, working on mini projects in SQL and C that deepened my understanding of data systems and their role in product development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "companyId": "15094374",
+      "companyUrn": "urn:li:fsd_company:15094374",
+      "companyLink1": "https://www.linkedin.com/company/15094374/",
+      "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHMxoGEoHiGLA/company-logo_200_200/company-logo_200_200/0/1691132180316/manipalacademyofhighereducation_logo?e=1758153600&v=beta&t=QBI3EHc8gKkp494PYpeCSmoaphZTYiksElRBisrGIUA",
+      "title": "Research Intern",
+      "subtitle": "Manipal Academy of Higher Education · Internship",
+      "caption": "Jun 2020 - Aug 2020 · 3 mos",
+      "metadata": "Dubai, United Arab Emirates · Remote",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "- Collaborated with the Mechatronics department to study robotic systems and design components using CAD.\n- Drafted a mini research paper, gaining hands-on experience with the key stages of academic research and idea development."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "updates": [],
+  "skills": [
+    {
+      "title": "R (Programming Language)",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "University of Illinois Urbana-Champaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Natural Language Processing (NLP)",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Software Engineer at Esri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Analysis",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Prompt Engineering",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tkinter",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Coffe Machine Simulation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Circuit Design",
+      "subComponents": [
+        {
+          "description": []
+        }
+      ]
+    },
+    {
+      "title": "Machine Learning",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GNU Debugger",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Photomosaic Generator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GitHub",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Photomosaic Generator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Photomosaic Generator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REST APIs",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "LinkedIn Profile Bot"
+            },
+            {
+              "type": "insightComponent",
+              "text": "Hangman"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Streamlit",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "LinkedIn Profile Bot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SystemVerilog",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "University of Illinois Urbana-Champaign"
+            },
+            {
+              "type": "insightComponent",
+              "text": "FPGA - Retro Golf Game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Field-Programmable Gate Arrays (FPGA)",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "University of Illinois Urbana-Champaign"
+            },
+            {
+              "type": "insightComponent",
+              "text": "FPGA - Retro Golf Game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "BRAM",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "FPGA - Retro Golf Game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "gdb",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Maze Data Structure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Git",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Maze Data Structure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Microsoft PowerPoint",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Staff Consultant at University of Illinois Urbana-Champaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LangChain",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Software Engineer at Esri"
+            },
+            {
+              "type": "insightComponent",
+              "text": "LinkedIn Profile Bot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Retrieval-Augmented Generation (RAG)",
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Software Engineer at Esri"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "profilePicAllDimensions": [
+    {
+      "width": 100,
+      "height": 100,
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1694057542164?e=1758153600&v=beta&t=6xTtgDaLY3_gHPUZ9OhKqhINdjtEyxaKREceskKsHOU"
+    },
+    {
+      "width": 200,
+      "height": 200,
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694057542164?e=1758153600&v=beta&t=9aH9w1rorP5a-PBcrBYu81YvZP5yf56pleWrePNX-Wg"
+    },
+    {
+      "width": 400,
+      "height": 400,
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1694057542164?e=1758153600&v=beta&t=dPzbf474By6mlZm5zUgh_cRaURuKAqAELC2XqofN58Q"
+    },
+    {
+      "width": 800,
+      "height": 800,
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQETSAKswg3c3g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694057542164?e=1758153600&v=beta&t=hxpHWNlHSGxIdN-s5fDd0Rzt5Sl63d5fVJ6NdbN1O40"
+    }
+  ],
+  "educations": [
+    {
+      "companyId": "2650",
+      "companyUrn": "urn:li:fsd_company:2650",
+      "companyLink1": "https://www.linkedin.com/company/2650/",
+      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGFFDl_Z9pIAA/company-logo_200_200/company-logo_200_200/0/1630611684443/university_of_illinois_at_urbana_champaign_logo?e=1758153600&v=beta&t=pKjcvpIqLt_u72DCZ0xODxSDYizicVxvOQcCBLC0A3Y",
+      "title": "University of Illinois Urbana-Champaign",
+      "subtitle": "Bachelor's degree, Computer Engineering",
+      "caption": "Aug 2022 - May 2026",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Activities and societies: Illini Electric Motorsport\nIllinois Consulting Group"
+            },
+            {
+              "type": "textComponent",
+              "text": "Junior Majoring in Computer Engineering, Minor in Statistics\nJames Scholar student. \nDean's List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "companyId": "421376",
+      "companyUrn": "urn:li:fsd_company:421376",
+      "companyLink1": "https://www.linkedin.com/company/421376/",
+      "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEwoQA7jbo2Kw/company-logo_200_200/company-logo_200_200/0/1727094733043?e=1758153600&v=beta&t=VnhzwOmBp3uM0CGiFqCxniURv76rvXAAAAU8Bwp4XXo",
+      "title": "GEMS Education",
+      "subtitle": "High School Diploma, Computer Science",
+      "caption": "Sep 2020 - May 2022",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Grade: 41/45"
+            },
+            {
+              "type": "insightComponent",
+              "text": "Activities and societies: Founder & Leader of Podcast series: GMAHighSchool101. \nLeader of : Modern Digest\nLeader of: Purple Bell\nEnvironmental Council"
+            },
+            {
+              "type": "textComponent",
+              "text": "Completed my High School at Gems Modern Academy with a score of 41/45. Securing the IBDP Diploma after switching to the IBDP after completing the first 10 years of my education in the Indian Curriculum and achieving a score of 97.6% in Year 10."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "licenseAndCertificates": [],
+  "honorsAndAwards": [],
+  "languages": [],
+  "volunteerAndAwards": [
+    {
+      "companyId": "18660001",
+      "companyUrn": "urn:li:fsd_company:18660001",
+      "companyLink1": "https://www.linkedin.com/company/18660001/",
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQENAQLNNI5g5w/company-logo_200_200/company-logo_200_200/0/1631420208636/manzil_center_logo?e=1758153600&v=beta&t=R3eH6-41Jn421uSThhBQrM1sMg4yiiJeNL0EH6ZHm1c",
+      "title": "Social Media Designer",
+      "subtitle": "Manzil Center",
+      "caption": "Mar 2021 - Apr 2021 · 2 mos",
+      "metadata": "Children",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": []
+        }
+      ]
+    }
+  ],
+  "verifications": [],
+  "promos": [],
+  "highlights": [],
+  "projects": [
+    {
+      "title": "LinkedIn Profile Bot",
+      "subtitle": "Aug 2024 - Sep 2024",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "textComponent",
+              "text": "I developed and deployed an automated pipeline using Langchain agents and the Proxycurl API to streamline the retrieval and summarization of LinkedIn profile data. The pipeline dynamically extracts data via the Proxycurl API, followed by custom Python modules that preprocess and clean the data, extracting key details such as work experience, skills, and achievements. An LLM is integrated to generate detailed, recruiter-friendly summaries from the processed data. The solution is deployed using Streamlit, providing a user-friendly interface with seamless API integration for on-demand profile analysis, making it ideal for recruitment and talent acquisition professionals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FPGA - Retro Golf Game",
+      "subtitle": "Mar 2024 - May 2024",
+      "breakdown": false,
+      "subComponents": [
+        {
+          "description": [
+            {
+              "type": "insightComponent",
+              "text": "Associated with University of Illinois Urbana-Champaign"
+            },
+            {
+              "type": "textComponent",
+              "text": "I Designed and developed a fully playable mini-golf game on FPGA, utilizing System Verilog to integrate custom hardware control and game logic. Real-time user input was implemented via a USB keyboard, with responsive controls for direction and power. The Image-to-COE tool was utilized to store game graphics in BRAM, focusing on efficient memory usage. FSM and a grid based approach was used to achieve dynamic physics gameplay mechanics, including interactions with terrain traps like sand and water. The game was displayed on a 640x480 resolution screen via VGA to HDMI output, ensuring smooth, high-quality visuals on modern displays."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "publications": [],
+  "patents": [],
+  "courses": [],
+  "testScores": [],
+  "organizations": [],
+  "volunteerCauses": [],
+  "interests": [
+    {
+      "section_name": "Top Voices",
+      "section_components": [
+        {
+          "titleV2": "Aicha Evans",
+          "caption": "59,529 followers",
+          "subtitle": "CEO at Zoox",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/in/aicha-evans-4365731",
+          "subComponents": []
+        }
+      ]
+    },
+    {
+      "section_name": "Companies",
+      "section_components": [
+        {
+          "titleV2": "IBM",
+          "caption": "18,570,959 followers",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/company/1009/",
+          "subComponents": []
+        },
+        {
+          "titleV2": "Oracle",
+          "caption": "10,578,856 followers",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/company/1028/",
+          "subComponents": []
+        }
+      ]
+    },
+    {
+      "section_name": "Groups",
+      "section_components": [
+        {
+          "titleV2": "Machine Learning Community (Moderated)",
+          "caption": "1,993,015 members",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/groups/961087",
+          "subComponents": []
+        },
+        {
+          "titleV2": "Artificial Intelligence, Machine Learning, Data Science & Robotics",
+          "caption": "3,000,001 members",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/groups/3990648",
+          "subComponents": []
+        }
+      ]
+    },
+    {
+      "section_name": "Newsletters",
+      "section_components": [
+        {
+          "titleV2": "ServiceNow's The Lead Line",
+          "caption": "Published biweekly",
+          "subtitle": "Tech and strategy insights for business leaders",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/newsletters/6912153676727939072",
+          "subComponents": [
+            {
+              "insightComponent": {
+                "text": "ServiceNow",
+                "actionTarget": "https://www.linkedin.com/company/29352/"
+              }
+            }
+          ]
+        },
+        {
+          "titleV2": "Closing The Loop",
+          "caption": "Published biweekly",
+          "subtitle": "Palantir’s engineers, architects, and business leads discuss how to build and deliver operational AI.",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/newsletters/6930184863031459840",
+          "subComponents": [
+            {
+              "insightComponent": {
+                "text": "Palantir Technologies",
+                "actionTarget": "https://www.linkedin.com/company/20708/"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Schools",
+      "section_components": [
+        {
+          "titleV2": "freeCodeCamp",
+          "caption": "2,094,629 followers",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/school/4831032/",
+          "subComponents": []
+        },
+        {
+          "titleV2": "Y Combinator",
+          "caption": "1,415,453 followers",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/school/167872/",
+          "subComponents": []
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "section_name": "Received",
+      "section_components": [
+        {
+          "titleV2": "Jonathan Neal",
+          "caption": "August 9, 2025, Jonathan was Jay’s mentor",
+          "subtitle": "Principal AI Product Engineer at Esri",
+          "size": "LARGE",
+          "textActionTarget": "https://www.linkedin.com/in/jonathan-neal-2805b434",
+          "image": "https://media.licdn.com/dms/image/v2/C5603AQHpjjedlUI7CA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516562794015?e=1758153600&v=beta&t=PV4FJbEuGnY1bgJ-XqKdUR8SaNHBnAKoVlnrlCIQYiQ",
+          "subComponents": [
+            {
+              "fixedListComponent": [
+                {
+                  "type": "textComponent",
+                  "text": "In short:\nJay is entirely ready to architect his own intelligent systems.\nJay is a great person to work with.  He cares about his projects, pursues understanding when the experiment does not work as expected, and has really great presentation skills.\nSummary:\nJay, was brought in as an intern to work on our teams AI projects.  AI is a broad topic, so we left most of the spaces blank on what he was to accomplish. Jay's previous code projects had a sophistication that was on/above par with his peers. With people like Jay, I find that leaving the details blank gives their professional muse what they need to go beyond! Truely, Jay exceeded what I thought possible in the short timespan he was given.\nThe details and accomplishments:\nIndustry wide, there is a large desire from companies and users to use language models to improve the user experience. Esri, sees our role as a company to empower users to do meaningful, impactful work with GIS. We know that our software is a means to important answers of which we have provided an extensive Python API. The Python API our team is focused on is Arcpy. Arcpy has over 2000+ geoprocessing tools with some tools having up to 50 arguments in the function signature. Our users will typically use our extensive code samples and edit the code to their own needs.\nJay was given many different possibilities and he chose the most ambitious; small language model for Arcpy. Small language models are less capable than large language models, so more emphasis on creating training data is needed to achieve the same outcomes in code quality. Jay has fine-tuned a LORA adapter to double our generated code quality from our current small language model. Jay achieved success was rooted in his methodical approach.\n1. Read papers on what others have done with similar data.\n2. Run the fine-tunning experiment and measure outcomes.\n3. Pursue understanding on what didn't work.\n4. Work on both long/short term project goals.\n  *This project was short, but the longer-term goal of this project was to validate the generated code to what is on the user's machine.  Jay continually worked on these priorities and managed his time efficiently.  This was vital to the success Jay had on this project.\nStruggles:\n1. Phi-4-mini-instruct is the initial model we started with.  This model's special tokens are not what is in the pytourch module. Jay continually pursued the problem with the code quality for 3-4 days before we found the truth of the issue.\n2. llama.cpp project does not have support RSLORA quantization.  Jay continued to learn what the problem was for an additional 3-4 days.\n3. Data investigations showed us that we can improve data by removing some words and making them more natural to how users work. Jay looking into these subtle nuance issues continually improved our data quality throughout his time.\nIn closing, Jay is a person worth investing your time in as it pays off in long term dividends and understanding."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Given",
+      "section_components": []
+    }
+  ]
+}

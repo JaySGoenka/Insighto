@@ -1,0 +1,218 @@
+{
+  "basic_info": {
+    "firstName": "Jay",
+    "lastName": "Goenka",
+    "fullName": "Jay  Goenka",
+    "headline": "SWE Intern @ Esri | Computer Engineering @ UIUC | James Scholar",
+    "location": "Champaign, Illinois, United States",
+    "about": "A senior at UIUC studying Computer Engineering with a Statistics minor. I'm passionate about using AI and Machine Learning to solve real-world problems and push the boundaries of what technology can do. I thrive on tackling challenges, learning continuously, and building impactful solutions. Each day is an opportunity to learn, spark new ideas, and be part of the technological progress defining our generation.\nCurrently open to internship and research opportunities. Let’s connect!"
+  },
+  "experience": [
+    {
+      "title": "Software Engineering Intern",
+      "company": "Esri",
+      "duration": "May 2025 - Present · 4 mos",
+      "description": []
+    },
+    {
+      "title": "University of Illinois Urbana-Champaign",
+      "company": "2 yrs 6 mos",
+      "duration": "",
+      "description": [
+        "- Analyzed performance of various LLMs in classifying accelerometer signals for motion tracking in Multiple Sclerosis patients, benchmarking against traditional machine learning models.\n- Used Python libraries such as Pandas and NumPy to clean, filter, and batch raw accelerometer data, transforming it into graph-based or structured numeric formats for LLM input.\n- Applied and compared prompt engineering techniques (few-shot, zero-shot, numeric, graphical, hybrid) to optimize classification accuracy without fine-tuning.",
+        "- Conducted in-depth primary and secondary research to analyze market trends, emerging technologies, and competitive positioning across multiple industries for partner companies. \n- Delivered actionable, data-driven insights that informed product development and long-term growth strategies, supporting executive decision-making through structured analysis and cross-functional collaboration."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Esri",
+      "duration": "Jun 2024 - Aug 2024 · 3 mos",
+      "description": [
+        "- Automated metadata extraction and document tagging workflows using spaCy and custom rules to process unstructured geospatial records. \n- Engineered a context-aware chunking strategy, storing the embeddings in a vector database for scalable semantic search. \n- Designed an efficient retrieval function to surface high-relevance content to the LLM, reducing context length by 15% and improving response precision.\n- Combined data preprocessing, semantic retrieval, and prompt engineering to build a complete LLM workflow, enabling a RAG-based chat interface that delivers accurate, context-aware responses to user queries."
+      ]
+    },
+    {
+      "title": "Summer Intern",
+      "company": "Circuit Computer",
+      "duration": "Jul 2021 - Aug 2021 · 2 mos",
+      "description": [
+        "- Interned with a focus on database management, working on mini projects in SQL and C that deepened my understanding of data systems and their role in product development."
+      ]
+    },
+    {
+      "title": "Research Intern",
+      "company": "Manipal Academy of Higher Education",
+      "duration": "Jun 2020 - Aug 2020 · 3 mos",
+      "description": [
+        "- Collaborated with the Mechatronics department to study robotic systems and design components using CAD.\n- Drafted a mini research paper, gaining hands-on experience with the key stages of academic research and idea development."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "skill": "R (Programming Language)",
+      "context": [
+        "University of Illinois Urbana-Champaign"
+      ]
+    },
+    {
+      "skill": "Natural Language Processing (NLP)",
+      "context": [
+        "Software Engineer at Esri"
+      ]
+    },
+    {
+      "skill": "Data Analysis",
+      "context": [
+        "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+      ]
+    },
+    {
+      "skill": "Prompt Engineering",
+      "context": [
+        "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+      ]
+    },
+    {
+      "skill": "Tkinter",
+      "context": [
+        "Coffe Machine Simulation"
+      ]
+    },
+    {
+      "skill": "Circuit Design",
+      "context": []
+    },
+    {
+      "skill": "Machine Learning",
+      "context": [
+        "Undergraduate Research Assistant - Mobility and Fall Prevention Research Laboratory at University of Illinois Urbana-Champaign"
+      ]
+    },
+    {
+      "skill": "GNU Debugger",
+      "context": [
+        "Photomosaic Generator"
+      ]
+    },
+    {
+      "skill": "GitHub",
+      "context": [
+        "Photomosaic Generator"
+      ]
+    },
+    {
+      "skill": "Algorithms",
+      "context": [
+        "Photomosaic Generator"
+      ]
+    },
+    {
+      "skill": "REST APIs",
+      "context": [
+        "LinkedIn Profile Bot",
+        "Hangman"
+      ]
+    },
+    {
+      "skill": "Streamlit",
+      "context": [
+        "LinkedIn Profile Bot"
+      ]
+    },
+    {
+      "skill": "SystemVerilog",
+      "context": [
+        "University of Illinois Urbana-Champaign",
+        "FPGA - Retro Golf Game"
+      ]
+    },
+    {
+      "skill": "Field-Programmable Gate Arrays (FPGA)",
+      "context": [
+        "University of Illinois Urbana-Champaign",
+        "FPGA - Retro Golf Game"
+      ]
+    },
+    {
+      "skill": "BRAM",
+      "context": [
+        "FPGA - Retro Golf Game"
+      ]
+    },
+    {
+      "skill": "gdb",
+      "context": [
+        "Maze Data Structure"
+      ]
+    },
+    {
+      "skill": "Git",
+      "context": [
+        "Maze Data Structure"
+      ]
+    },
+    {
+      "skill": "Microsoft PowerPoint",
+      "context": [
+        "Staff Consultant at University of Illinois Urbana-Champaign"
+      ]
+    },
+    {
+      "skill": "LangChain",
+      "context": [
+        "Software Engineer at Esri",
+        "LinkedIn Profile Bot"
+      ]
+    },
+    {
+      "skill": "Retrieval-Augmented Generation (RAG)",
+      "context": [
+        "Software Engineer at Esri"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "degree": "Bachelor's degree, Computer Engineering",
+      "duration": "Aug 2022 - May 2026",
+      "description": [
+        "Junior Majoring in Computer Engineering, Minor in Statistics\nJames Scholar student. \nDean's List"
+      ]
+    },
+    {
+      "institution": "GEMS Education",
+      "degree": "High School Diploma, Computer Science",
+      "duration": "Sep 2020 - May 2022",
+      "description": [
+        "Completed my High School at Gems Modern Academy with a score of 41/45. Securing the IBDP Diploma after switching to the IBDP after completing the first 10 years of my education in the Indian Curriculum and achieving a score of 97.6% in Year 10."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "LinkedIn Profile Bot",
+      "duration": "Aug 2024 - Sep 2024",
+      "description": [
+        "I developed and deployed an automated pipeline using Langchain agents and the Proxycurl API to streamline the retrieval and summarization of LinkedIn profile data. The pipeline dynamically extracts data via the Proxycurl API, followed by custom Python modules that preprocess and clean the data, extracting key details such as work experience, skills, and achievements. An LLM is integrated to generate detailed, recruiter-friendly summaries from the processed data. The solution is deployed using Streamlit, providing a user-friendly interface with seamless API integration for on-demand profile analysis, making it ideal for recruitment and talent acquisition professionals."
+      ]
+    },
+    {
+      "title": "FPGA - Retro Golf Game",
+      "duration": "Mar 2024 - May 2024",
+      "description": [
+        "I Designed and developed a fully playable mini-golf game on FPGA, utilizing System Verilog to integrate custom hardware control and game logic. Real-time user input was implemented via a USB keyboard, with responsive controls for direction and power. The Image-to-COE tool was utilized to store game graphics in BRAM, focusing on efficient memory usage. FSM and a grid based approach was used to achieve dynamic physics gameplay mechanics, including interactions with terrain traps like sand and water. The game was displayed on a 640x480 resolution screen via VGA to HDMI output, ensuring smooth, high-quality visuals on modern displays."
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "section": "Received",
+      "recommender_name": "Jonathan Neal",
+      "recommender_title": "Principal AI Product Engineer at Esri",
+      "recommender_date": "August 9, 2025, Jonathan was Jay’s mentor",
+      "content": "In short:\nJay is entirely ready to architect his own intelligent systems.\nJay is a great person to work with.  He cares about his projects, pursues understanding when the experiment does not work as expected, and has really great presentation skills.\nSummary:\nJay, was brought in as an intern to work on our teams AI projects.  AI is a broad topic, so we left most of the spaces blank on what he was to accomplish. Jay's previous code projects had a sophistication that was on/above par with his peers. With people like Jay, I find that leaving the details blank gives their professional muse what they need to go beyond! Truely, Jay exceeded what I thought possible in the short timespan he was given.\nThe details and accomplishments:\nIndustry wide, there is a large desire from companies and users to use language models to improve the user experience. Esri, sees our role as a company to empower users to do meaningful, impactful work with GIS. We know that our software is a means to important an..."
+    }
+  ]
+}
