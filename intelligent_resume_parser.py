@@ -736,7 +736,7 @@ def main():
     parser = IntelligentResumeParser(use_ocr=True, use_ml=True)
 
     print("Testing Intelligent Resume Parser...")
-    resume_path = "/Users/jay/Desktop/JaySGoenka Resume.pdf"
+    resume_path = "JaySGoenka Resume.pdf"
     print(f"Parsing resume: {resume_path}")
     parsed_data = parser.parse_resume(resume_path)
     if "error" not in parsed_data:
