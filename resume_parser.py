@@ -152,71 +152,63 @@ class ResumeParser:
         
         return basic_info
     
-
+    
     def find_section_boundaries(self, lines: List[str]) -> Dict[str, Tuple[int, int]]:
         """Find start and end positions of each section using universal patterns."""
-        
+
         boundaries = {section: (-1, -1) for section in self.universal_section_patterns.keys()}
-        section_starts = {}  # Track where each section starts
-        
+        section_starts = {}  # Track start line -> section name
+
         # First pass: find all section headers
         for i, line in enumerate(lines):
             line_lower = line.lower().strip()
             if not line_lower:
                 continue
-            
-            # Check each section pattern
+
             for section_name, patterns in self.universal_section_patterns.items():
-                if section_name in section_starts:  # Already found this section
+                if section_name in section_starts.values():  # Already found this section
                     continue
-                    
+
                 for pattern in patterns:
                     if re.search(f'^{pattern}$', line_lower, re.IGNORECASE):
-                        section_starts[section_name] = i + 1  # Start after header
+                        section_starts[i + 1] = section_name  # Start after header
                         break
-        
-        # Second pass: determine section boundaries
-        section_order = []
-        for line_num in sorted(section_starts.values()):
-            for section_name, start_line in section_starts.items():
-                if start_line == line_num:
-                    section_order.append((section_name, start_line))
-                    break
-        
+
+        # Second pass: determine section boundaries efficiently
+        sorted_starts = sorted(section_starts.keys())
+        section_order = [(section_starts[start], start) for start in sorted_starts]
+
         # Set boundaries based on order
         for i, (section_name, start) in enumerate(section_order):
             if i < len(section_order) - 1:
-                # End at the start of the next section
                 _, next_start = section_order[i + 1]
-                end = next_start - 1  # -1 because next_start is after the next header
+                end = next_start - 1
             else:
-                # Last section goes to end of document
                 end = len(lines)
-            
             boundaries[section_name] = (start, end)
-        
-        return boundaries
-    
 
-    def parse_section_content_universal(self, section_name: str, content_lines: List[str]) -> List[Dict[str, Any]]:
+        return boundaries
+
+
+    def parse_section_content(self, section_name: str, content_lines: List[str]) -> List[Dict[str, Any]]:
         """Parse content of a specific section without domain assumptions."""
         
         if section_name == "experience":
-            return self._parse_experience_universal(content_lines)
+            return self._parse_experience(content_lines)
         elif section_name == "education":
-            return self._parse_education_universal(content_lines)
+            return self._parse_education(content_lines)
         elif section_name == "projects":
-            return self._parse_projects_universal(content_lines)
+            return self._parse_projects(content_lines)
         elif section_name == "skills":
-            return self._parse_skills_universal(content_lines)
+            return self._parse_skills(content_lines)
         elif section_name == "certifications":
-            return self._parse_certifications_universal(content_lines)
+            return self._parse_certifications(content_lines)
         elif section_name == "publications":
-            return self._parse_publications_universal(content_lines)
+            return self._parse_publications(content_lines)
         else:
             return []
     
-    def _parse_experience_universal(self, lines: List[str]) -> List[Dict[str, Any]]:
+    def _parse_experience(self, lines: List[str]) -> List[Dict[str, Any]]:
         """Parse work experience section without domain assumptions."""
         
         experiences = []
@@ -228,7 +220,10 @@ class ResumeParser:
                 continue
             
             # Look for job title patterns (universal across domains)
-            if re.search(r'^(senior|junior|lead|principal|staff|senior\s+)?([a-z\s]+)?(engineer|developer|scientist|analyst|manager|consultant|specialist|coordinator|assistant|director|supervisor|technician|technologist|researcher|instructor|professor|lecturer|coordinator|administrator|officer|representative|associate|executive|president|vice\s+president|ceo|cfo|cto|coo)', line, re.IGNORECASE):
+            if re.search(r'^(?:(senior|junior|lead|principal|staff|technical|software|product|associate|assistant|chief|head|vice president|vp|director|manager|consultant|specialist|coordinator|administrator|officer|executive|president|intern|trainee|fellow|apprentice)\s+)*'
+                    r'([a-zA-Z\s]+)?'
+                    r'(engineer|developer|scientist|analyst|manager|consultant|specialist|coordinator|assistant|director|supervisor|technician|technologist|researcher|instructor|professor|lecturer|administrator|officer|representative|associate|executive|president|intern|trainee|fellow|apprentice|designer|marketer|sales|product)'
+                    r'(?:\s+intern|\s+trainee|\s+fellow|\s+apprentice)?', line, re.IGNORECASE):
                 if current_exp:
                     experiences.append(current_exp)
                 current_exp = {"title": line, "company": "", "duration": "", "description": []}
@@ -253,7 +248,7 @@ class ResumeParser:
         
         return experiences
     
-    def _parse_education_universal(self, lines: List[str]) -> List[Dict[str, Any]]:
+    def _parse_education(self, lines: List[str]) -> List[Dict[str, Any]]:
         """Parse education section without domain assumptions."""
         
         education = []
@@ -285,8 +280,8 @@ class ResumeParser:
             education.append(current_edu)
         
         return education
-    
-    def _parse_projects_universal(self, lines: List[str]) -> List[Dict[str, Any]]:
+
+    def _parse_projects(self, lines: List[str]) -> List[Dict[str, Any]]:
         """Parse projects section without domain assumptions."""
         
         projects = []
@@ -312,8 +307,8 @@ class ResumeParser:
             projects.append(current_project)
         
         return projects
-    
-    def _parse_skills_universal(self, lines: List[str]) -> List[str]:
+
+    def _parse_skills(self, lines: List[str]) -> List[str]:
         """Parse skills section without domain assumptions."""
         
         skills = []
@@ -333,8 +328,8 @@ class ResumeParser:
                         skills.append(skill)
         
         return list(set(skills))  # Remove duplicates
-    
-    def _parse_certifications_universal(self, lines: List[str]) -> List[Dict[str, Any]]:
+
+    def _parse_certifications(self, lines: List[str]) -> List[Dict[str, Any]]:
         """Parse certifications section without domain assumptions."""
         
         certifications = []
@@ -368,8 +363,8 @@ class ResumeParser:
             certifications.append(current_cert)
         
         return certifications
-    
-    def _parse_publications_universal(self, lines: List[str]) -> List[Dict[str, Any]]:
+
+    def _parse_publications(self, lines: List[str]) -> List[Dict[str, Any]]:
         """Parse publications section without domain assumptions."""
         
         publications = []
@@ -398,42 +393,6 @@ class ResumeParser:
         
         return publications
     
-
-    def get_parsing_summary(self, parsed_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Get a summary of parsed resume data."""
-        
-        if "error" in parsed_data:
-            return {"error": parsed_data["error"]}
-        
-        summary = {
-            "total_sections": 0,
-            "sections_found": [],
-            "basic_info_complete": False,
-            "parsing_quality": "unknown"
-        }
-        
-        # Count sections
-        for section in self.universal_section_patterns.keys():
-            if section in parsed_data and parsed_data[section]:
-                summary["total_sections"] += 1
-                summary["sections_found"].append(section)
-        
-        # Check basic info completeness
-        basic_info = parsed_data.get("basic_info", {})
-        required_fields = ["name", "email"]
-        summary["basic_info_complete"] = all(basic_info.get(field) for field in required_fields)
-        
-        # Assess parsing quality
-        if summary["total_sections"] >= 4 and summary["basic_info_complete"]:
-            summary["parsing_quality"] = "excellent"
-        elif summary["total_sections"] >= 3 and summary["basic_info_complete"]:
-            summary["parsing_quality"] = "good"
-        elif summary["total_sections"] >= 2:
-            summary["parsing_quality"] = "fair"
-        else:
-            summary["parsing_quality"] = "poor"
-        
-        return summary
     
     def extract_sections(self, content: str) -> Dict[str, Any]:
         """Extract all sections using universal patterns."""
@@ -450,8 +409,8 @@ class ResumeParser:
         for section_name, (start, end) in section_boundaries.items():
             if start != -1 and end != -1:
                 section_content = lines[start:end]
-                sections[section_name] = self.parse_section_content_universal(section_name, section_content)
-        
+                sections[section_name] = self.parse_section_content(section_name, section_content)
+
         return sections
     
 

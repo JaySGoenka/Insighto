@@ -2,16 +2,17 @@ import json
 import os
 from profile_extractor import LinkedInProfileExtractor
 from resume_parser import ResumeParser
+from intelligent_resume_parser import IntelligentResumeParser
 from typing import Dict, Any, Optional
 from langchain_ollama import OllamaLLM
-from langchain.prompts.prompt import PromptTemplate
 
 class ComprehensiveProfileProcessor:
-    """Processes LinkedIn profiles and resumes to generate comprehensive candidate reports."""
+    """Streamlined processor for LinkedIn profiles and resumes."""
     
     def __init__(self):
-        self.extractor = LinkedInProfileExtractor()
+        self.linkedin_extractor = LinkedInProfileExtractor()
         self.resume_parser = ResumeParser()
+        self.intelligent_parser = IntelligentResumeParser()
         
         try:
             self.llm = OllamaLLM(model="llama3.1")
@@ -19,274 +20,139 @@ class ComprehensiveProfileProcessor:
         except Exception as e:
             print(f"Warning: LLM not available: {e}")
             self.llm_available = False
-    
-
-    def _format_linkedin_data(self, profile: Dict[str, Any]) -> Dict[str, Any]:
-        """Format LinkedIn data for comprehensive analysis."""
-        
-        formatted = {
-            "source": "LinkedIn Profile",
-            "basic_info": {
-                "name": f"{profile.get('basic_info', {}).get('firstName', '')} {profile.get('basic_info', {}).get('lastName', '')}",
-                "headline": profile.get('basic_info', {}).get('headline', ''),
-                "location": profile.get('basic_info', {}).get('location', ''),
-                "about": profile.get('basic_info', {}).get('about', '')
-            },
-            "experience": profile.get('experience', []),
-            "skills": profile.get('skills', []),
-            "education": profile.get('education', []),
-            "projects": profile.get('projects', []),
-            "recommendations": profile.get('recommendations', [])
-        }
-        return formatted
 
 
     def process_linkedin_profile(self, linkedin_url: str) -> Optional[Dict[str, Any]]:
-        """Extract and process LinkedIn profile data."""
+        """Extract LinkedIn profile data."""
         
         try:
-            extracted_profile = self.extractor.process_profile(linkedin_url)
-            if extracted_profile:
-                return self._format_linkedin_data(extracted_profile)
-            return None
+            return self.linkedin_extractor.process_profile(linkedin_url)
         except Exception as e:
             print(f"Error processing LinkedIn profile: {e}")
             return None
-    
-    def _format_resume_data(self, resume_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Format resume data for comprehensive analysis."""
-        
-        if "error" in resume_data:
-            return resume_data
-        
-        # The smart parser already provides well-structured data
-        formatted = {
-            "source": "Resume",
-            "basic_info": resume_data.get("basic_info", {}),
-            "experience": resume_data.get("experience", []),
-            "skills": resume_data.get("skills", []),
-            "education": resume_data.get("education", []),
-            "projects": resume_data.get("projects", []),
-            "certifications": resume_data.get("certifications", [])
-        }
-        return formatted
 
 
     def process_resume_file(self, resume_file_path: str) -> Optional[Dict[str, Any]]:
-        """Process resume file and extract relevant information using smart parser."""
+        """Process resume file with intelligent parser first, fallback to regex parser."""
         
         try:
-            parsed_resume = self.resume_parser.parse_resume(resume_file_path)
-            if "error" in parsed_resume:
-                print(f"Resume parsing error: {parsed_resume['error']}")
+            # Try intelligent parser first
+            parsed_intelligent = self.intelligent_parser.parse_resume(resume_file_path)
+            
+            if "error" not in parsed_intelligent:
+                confidence = parsed_intelligent.get("metadata", {}).get("confidence_score", 0.0)
+                print(f"Intelligent parser confidence: {confidence}")
+                
+                if confidence >= 0.4:
+                    return {"data": parsed_intelligent, "parser_used": "intelligent"}
+            
+            # Fallback to regex parser
+            print("Using fallback regex parser...")
+            parsed_regex = self.resume_parser.parse_resume(resume_file_path)
+            
+            if "error" in parsed_regex:
+                print(f"Resume parsing error: {parsed_regex['error']}")
                 return None
-            return parsed_resume
+            
+            return {"data": parsed_regex, "parser_used": "regex"}
+            
         except Exception as e:
             print(f"Error processing resume: {e}")
             return None
-    
+        
 
-    def _create_comprehensive_prompt(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> str:
-        """Create a comprehensive prompt for LLM analysis."""
+    def _create_prompt(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> str:
+        """Create a simple, focused prompt for LLM analysis."""
         
-        prompt = f"""
-        You are an expert HR professional tasked with creating a comprehensive candidate report.
-        Please analyze the following LinkedIn profile and resume data to generate a detailed, professional report.
+        data_sources = []
         
-        LINKEDIN PROFILE DATA:
-        {json.dumps(linkedin_data, indent=2, ensure_ascii=False)}
+        if linkedin_data:
+            data_sources.append(f"LINKEDIN PROFILE:\n{json.dumps(linkedin_data, indent=2)}")
         
-        RESUME DATA:
-        {json.dumps(resume_data, indent=2, ensure_ascii=False)}
+        if resume_data:
+            data_sources.append(f"RESUME DATA:\n{json.dumps(resume_data, indent=2)}")
         
-        Please provide a comprehensive candidate report that includes:
+        combined_data = "\n\n".join(data_sources)
         
-        1. **EXECUTIVE SUMMARY** (2-3 sentences)
-           - Overall professional assessment
-           - Key qualifications and strengths
-        
-        2. **PROFESSIONAL BACKGROUND**
-           - Career progression and experience
-           - Notable achievements and responsibilities
-           - Industry expertise and domain knowledge
-        
-        3. **TECHNICAL SKILLS & EXPERTISE**
-           - Core technical competencies
-           - Programming languages and technologies
-           - Tools and platforms experience
-           - Certifications and training
-        
-        4. **EDUCATION & QUALIFICATIONS**
-           - Academic background
-           - Relevant coursework and projects
-           - Professional development
-        
-        5. **KEY PROJECTS & ACCOMPLISHMENTS**
-           - Significant projects and their impact
-           - Innovation and problem-solving examples
-           - Quantifiable achievements
-        
-        6. **INTERPERSONAL & LEADERSHIP SKILLS**
-           - Team collaboration experience
-           - Leadership roles and responsibilities
-           - Communication and presentation abilities
-        
-        7. **CAREER RECOMMENDATIONS**
-           - Suitable roles and industries
-           - Growth potential and development areas
-           - Market positioning
-        
-        8. **OVERALL ASSESSMENT**
-           - Strengths and competitive advantages
-           - Areas for improvement
-           - Fit for different types of opportunities
-        
-        Please write this report in a professional, objective tone suitable for HR professionals and hiring managers.
-        Focus on actionable insights and clear, structured information.
-        """
-        
-        return prompt
+        return f"""Analyze the following candidate information and provide a comprehensive but concise report for recruiters:
+
+{combined_data}
+
+Please provide a professional assessment that covers the candidate's background, skills, experience, and suitability for roles. Keep the response focused and actionable for hiring decisions."""
 
 
-    def generate_comprehensive_report(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> str:
-        """Generate a comprehensive candidate report using LLM."""
+    def generate_report(self, linkedin_data: Dict[str, Any] = None, resume_data: Dict[str, Any] = None) -> str:
+        """Generate candidate report using available data."""
+        
+        if not linkedin_data and not resume_data:
+            return "No data available to generate report."
         
         if not self.llm_available:
-            return self._generate_fallback_report(linkedin_data, resume_data)
+            return self._generate_simple_fallback(linkedin_data, resume_data)
         
         try:
-            prompt = self._create_comprehensive_prompt(linkedin_data, resume_data)
+            prompt = self._create_simple_prompt(linkedin_data, resume_data)
             response = self.llm.invoke(prompt)
             return response if response else "Report generation failed."
             
         except Exception as e:
-            print(f"Error generating LLM report: {e}")
-            return self._generate_fallback_report(linkedin_data, resume_data)
-    
-    
-    
-    def _generate_fallback_report(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> str:
-        """Generate a fallback report when LLM is not available."""
+            print(f"Error generating report: {e}")
+            return self._generate_simple_fallback(linkedin_data, resume_data)
+
+
+    def _generate_simple_fallback(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> str:
+        """Generate a simple fallback report."""
         
-        report = []
+        report = ["CANDIDATE REPORT", "=" * 40, ""]
         
-        # Basic information
-        linkedin_name = linkedin_data.get('basic_info', {}).get('name', 'N/A')
-        resume_name = resume_data.get('basic_info', {}).get('name', 'N/A')
-        name = linkedin_name if linkedin_name != 'N/A' else resume_name
+        # Basic info from LinkedIn or resume
+        if linkedin_data:
+            basic = linkedin_data.get('basic_info', {})
+            name = f"{basic.get('firstName', '')} {basic.get('lastName', '')}".strip()
+            if name:
+                report.append(f"Name: {name}")
+            if basic.get('headline'):
+                report.append(f"Title: {basic.get('headline')}")
+            if basic.get('location'):
+                report.append(f"Location: {basic.get('location')}")
+            
+            # Experience count
+            experiences = linkedin_data.get('experience', [])
+            if experiences:
+                report.append(f"Experience: {len(experiences)} positions")
+            
+            # Skills count
+            skills = linkedin_data.get('skills', [])
+            if skills:
+                report.append(f"Skills: {len(skills)} listed")
         
-        report.append(f"COMPREHENSIVE CANDIDATE REPORT")
-        report.append(f"Generated without LLM assistance")
-        report.append("=" * 50)
+        elif resume_data:
+            basic = resume_data.get('basic_info', {})
+            if basic.get('name'):
+                report.append(f"Name: {basic.get('name')}")
+            if basic.get('email'):
+                report.append(f"Email: {basic.get('email')}")
+        
         report.append("")
-        
-        # Executive Summary
-        report.append("EXECUTIVE SUMMARY")
-        report.append(f"Candidate: {name}")
-        report.append(f"LinkedIn Headline: {linkedin_data.get('basic_info', {}).get('headline', 'N/A')}")
-        report.append(f"Location: {linkedin_data.get('basic_info', {}).get('location', 'N/A')}")
-        report.append("")
-        
-        # Experience Summary
-        experiences = linkedin_data.get('experience', [])
-        if experiences:
-            report.append("PROFESSIONAL EXPERIENCE")
-            report.append(f"Total positions: {len(experiences)}")
-            for i, exp in enumerate(experiences[:3], 1):
-                report.append(f"{i}. {exp.get('title', 'N/A')} at {exp.get('company', 'N/A')}")
-                report.append(f"   Duration: {exp.get('duration', 'N/A')}")
-            report.append("")
-        
-        # Skills Summary
-        skills = linkedin_data.get('skills', [])
-        if skills:
-            report.append("TECHNICAL SKILLS")
-            skill_names = [skill.get('skill', '') for skill in skills[:10]]
-            report.append(f"Top skills: {', '.join(skill_names)}")
-            report.append("")
-        
-        # Education Summary
-        education = linkedin_data.get('education', [])
-        if education:
-            report.append("EDUCATION")
-            for edu in education:
-                report.append(f"- {edu.get('degree', 'N/A')} from {edu.get('institution', 'N/A')}")
-            report.append("")
-        
-        # Resume Summary
-        if resume_data and 'error' not in resume_data:
-            report.append("RESUME INFORMATION")
-            report.append(f"Resume name: {resume_data.get('basic_info', {}).get('name', 'N/A')}")
-            resume_skills = resume_data.get('skills', [])
-            if resume_skills:
-                report.append(f"Resume skills: {', '.join(resume_skills)}")
-            report.append("")
-        
-        report.append("NOTE: This is a basic report generated without AI assistance.")
-        report.append("For a more comprehensive analysis, ensure LLM services are available.")
+        report.append("Note: Limited analysis available without LLM.")
         
         return "\n".join(report)
-    
-    
-    def get_candidate_summary(self, linkedin_data: Dict[str, Any], resume_data: Dict[str, Any]) -> Dict[str, Any]:
-        
-        summary = {
-            "name": linkedin_data.get('basic_info', {}).get('name', 'N/A'),
-            "headline": linkedin_data.get('basic_info', {}).get('headline', 'N/A'),
-            "location": linkedin_data.get('basic_info', {}).get('location', 'N/A'),
-            "total_experience": len(linkedin_data.get('experience', [])),
-            "total_skills": len(linkedin_data.get('skills', [])),
-            "total_education": len(linkedin_data.get('education', [])),
-            "total_projects": len(linkedin_data.get('projects', [])),
-            "has_resume": 'error' not in resume_data if resume_data else False,
-            "llm_available": self.llm_available
-        }
-        return summary
-
 
 def main():
-    """Test the comprehensive profile processor."""
-    
+    """Test the streamlined profile processor."""
     processor = ComprehensiveProfileProcessor()
     
-    print("Testing Comprehensive Profile Processor...")
-    
-    # Test LinkedIn profile processing
+    # Test with LinkedIn URL
     linkedin_url = "https://www.linkedin.com/in/jay-goenka-b797851b2/"
-    print(f"\nProcessing LinkedIn profile: {linkedin_url}")
-    
     linkedin_data = processor.process_linkedin_profile(linkedin_url)
-    if linkedin_data:
-        print("LinkedIn profile processed successfully")
-    else:
-        print("Failed to process LinkedIn profile")
-        return
     
     resume_data = None
-
-    # Generate comprehensive report
-    print("\n Generating comprehensive candidate report...")
-    report = processor.generate_comprehensive_report(linkedin_data, resume_data)
     
-    if report:
-        print("Report generated successfully!")
-        print("\n" + "="*60)
-        print("COMPREHENSIVE CANDIDATE REPORT")
-        print("="*60)
-        print(report)
-        
-        # Save report to file
-        with open("comprehensive_candidate_report.txt", "w", encoding="utf-8") as f:
-            f.write(report)
-        print("\n Report saved to 'comprehensive_candidate_report.txt'")
-        
-        # Get summary
-        summary = processor.get_candidate_summary(linkedin_data, resume_data)
-        print(f"\n Candidate Summary: {summary}")
-        
-    else:
-        print(" Failed to generate report")
-
+    # Generate report
+    report = processor.generate_report(linkedin_data, resume_data)
+    print("CANDIDATE REPORT")
+    print("=" * 50)
+    print(report)
 
 if __name__ == "__main__":
     main()
