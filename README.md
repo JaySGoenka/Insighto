@@ -52,5 +52,3 @@ Insighto is an intelligent candidate analysis tool that leverages both resumes a
 - `requirements.txt`: Python dependencies.
 
 ---
-
-For setup and usage instructions, see the comments in `streamlit_app.py` or reach out for further documentation.
